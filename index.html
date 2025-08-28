@@ -1,11 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    
+
+<body class="container mx-auto">
+    <!-- Nav -->
+    <header>
+        <nav class=" flex justify-between items-center p-5">
+            <div class="flex justify-center items-center gap-3 ">
+                <img class="w-[50px] h-[50px]" src="assets/logo.png" alt="Logo">
+                <h1 class="text-[#006747] font-bold">Emergency <br> Service</h1>
+            </div>
+            <div class="flex  gap-3 justify-center items-center">
+                <div class="flex gap-3 justify-center items-center py-3 px-8 bg-[##41ff6b1a] rounded-[50px]">
+                    <span id="heart" class="font-bold">0</span>
+                    <img class="w-[30px] h-[30px]" src="assets/heart.png" alt="">
+                </div>
+                <div class="flex justify-center items-center gap-3 py-3 px-8 bg-[##41ff6b1a] rounded-[50px] ">
+                    <span id="coin" class="font-bold">0</span>
+                    <img class="w-[30px] h-[30px]" src="assets/coin.png" alt="">
+                </div>
+                <div class="text-white flex justify-center items-center gap-2 py-3 px-8 bg-[#00A63E] rounded-[50px] ">
+                    <span id="coin" class="font-bold">0</span>
+                    <h1 class="font-semibold">Copy</h1>
+                </div>
+
+        </nav>
+    </header>
+    <!-- Banner -->
+    <section class="text-white bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] mb-10">
+        <div class="flex flex-col justify-center items-center gap-3 text-center px-3 py-5 md:py-16">
+            <img class="w-[100px] h-[100px]" src="assets/logo.png" alt="Brand">
+            <h1 class="text-2xl font-bold md:text-4xl">Emergency Service Directory</h1>
+            <p class="text-wrap text-xl">Government Emergency Services at Your Fingertip – A Project by Government of
+                the People’s Republic of Bangladesh</p>
+        </div>
+    </section>
+    <!-- Main -->
+    <section>
+        <div class="md:flex gap-8">
+            <div class="md:w-[70%] w-full  mb-6 ">
+                <div class=" grid grid-cols-1 md:grid-cols-3 md:gap-7 gap-5 ">
+                    <div
+                        class="card border border-neutral-300 rounded-xl shadow-sm flex flex-col  gap-4 md:w-72 w-full p-8">
+                        <div class="flex justify-between">
+                            <div class="w-16 h-16 flex justify-center items-center rounded-2xl bg-[#FFE3E2]">
+                                <img class="w-[32px] h-[32px]" src="assets/emergency.png" alt="">
+                            </div>
+                            <img src="assets/heart.svg" alt="">
+                        </div>
+                        <div class="flex gap-2 flex-col ">
+                            <div>
+                                <h1 class="font-bold ">National Emergency Number</h1>
+                                <p class="text-neutral-700">National Emergency</p>
+                            </div>
+                            <div>
+                                <h1 class="font-bold text-2xl md:text-4xl ">999</h1>
+                                <p class="md:text-lg text-sm text-neutral-700">All</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 md:justify-center items-center ">
+                            <button class="h-10 justify-center items-center border-neutral-500
+                            shadow-sm rounded-lg px-7 py-2 flex gap-2">
+                                <img src="assets/Group.svg" alt="">
+                                Copy
+                            </button>
+                            <button
+                                class="h-10  text-white justify-center items-center rounded-lg bg-[#00A63E] px-7 py-2 flex gap-2">
+                                <img src="assets/call.svg" alt="">
+                                Call
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="card border border-neutral-300 rounded-xl shadow-sm flex flex-col  gap-4 md:w-72 w-full p-8">
+                        <div class="flex justify-between">
+                            <div class="w-16 h-16 flex justify-center items-center rounded-2xl bg-[#FFE3E2]">
+                                <img class="w-[32px] h-[32px]" src="assets/emergency.png" alt="">
+                            </div>
+                            <img src="assets/heart.svg" alt="">
+                        </div>
+                        <div class="flex gap-2 flex-col ">
+                            <div>
+                                <h1 class="font-bold ">Police Helpline Number</h1>
+                                <p class="text-neutral-700">Police</p>
+                            </div>
+                            <div>
+                                <h1 class="font-bold text-2xl md:text-4xl ">999</h1>
+                                <p class="md:text-lg text-sm text-neutral-700">Police </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 md:justify-center items-center ">
+                            <button class="h-10 justify-center items-center border-neutral-500
+                            shadow-sm rounded-lg px-7 py-2 flex gap-2">
+                                <img src="assets/Group.svg" alt="">
+                                Copy
+                            </button>
+                            <button
+                                class="h-10  text-white justify-center items-center rounded-lg bg-[#00A63E] px-7 py-2 flex gap-2">
+                                <img src="assets/call.svg" alt="">
+                                Call
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="card border border-neutral-300 rounded-xl shadow-sm flex flex-col  gap-4 md:w-72 w-full p-8">
+                        <div class="flex justify-between">
+                            <div class="w-16 h-16 flex justify-center items-center rounded-2xl bg-[#FFE3E2]">
+                                <img class="w-[32px] h-[32px]" src="assets/emergency.png" alt="">
+                            </div>
+                            <img src="assets/heart.svg" alt="">
+                        </div>
+                        <div class="flex gap-2 flex-col ">
+                            <div>
+                                <h1 class="font-bold ">Fire Service Number</h1>
+                                <p class="text-neutral-700">Fire Service</p>
+                            </div>
+                            <div>
+                                <h1 class="font-bold text-2xl md:text-4xl ">999</h1>
+                                <p class="md:text-lg text-sm text-neutral-700">Fire</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 md:justify-center items-center ">
+                            <button class="h-10 justify-center items-center border-neutral-500
+                            shadow-sm rounded-lg px-7 py-2 flex gap-2">
+                                <img src="assets/Group.svg" alt="">
+                                Copy
+                            </button>
+                            <button
+                                class="h-10  text-white justify-center items-center rounded-lg bg-[#00A63E] px-7 py-2 flex gap-2">
+                                <img src="assets/call.svg" alt="">
+                                Call
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-[30%] w-full border border-neutral-300 rounded-xl shadow-sm p-6">
+                <div class="flex flex-col gap-2">
+                    <div class="flex justify-between items-center p-2 border border-neutral-300 rounded-xl shadow-sm">
+                        <div class="flex gap-2">
+                            <img src="assets/hist.svg" alt="">
+                            <h1>Call History</h1>
+                        </div>
+                        <div
+                            class="text-white flex justify-center items-center gap-2 py-3 px-8 bg-[#00A63E] rounded-[50px] ">
+                            <h1 class="font-semibold">Clear</h1>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center p-4 gap-4 border border-neutral-300 rounded-xl shadow-sm">
+                        <div>
+                            <h1>Fire Service Number</h1>
+                            <p>999</p>
+                        </div>
+                        <div>
+                            <h1>11:36:58 AM</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
