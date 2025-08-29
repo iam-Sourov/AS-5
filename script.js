@@ -1,71 +1,77 @@
 // Heart Counter Section
-const heartImages = document.querySelectorAll("#CardHeart");
-const counterElement = document.getElementById('heart');
+const heartIcons = document.querySelectorAll('#heartIcons');
+const heartDisplay = document.getElementById('heart');
 let count = 0;
-for (const image of heartImages) {
+for (const icon of heartIcons) {
 
-  image.addEventListener('click', () => {
+  icon.addEventListener('click', () => {
     count++;
-    counterElement.innerText = count;
+    heartDisplay.innerText = count;
   });
 }
-// Copy Button Section 
-const counterCopy = document.getElementById("DisplayCopy");
-const copyButtons = document.querySelectorAll(".copy-btn");
-let CopyCount = 0;
+// Copy Btn Section 
+const displayCopy = document.getElementById('displayCopy');
+const copyButtons = document.querySelectorAll('.copy-btn');
+let copyCount = 0;
 
 copyButtons.forEach(function (button) {
-  button.addEventListener("click", function () {
-    const card = button.closest(".card");
+  button.addEventListener('click', function () {
+    const card = button.closest('.card');
 
-    const numberEl = card.querySelector(".service-number");
-    const numberText = numberEl.textContent.trim();
+    const serviceNmbr = card.querySelector('.service-number');
+    const numberText = serviceNmbr.textContent.trim();
 
-    const textarea = document.createElement("textarea");
+    const textarea = document.createElement('textarea');
     textarea.value = numberText;
     document.body.appendChild(textarea);
     textarea.select();
-    document.execCommand("copy");
+    document.execCommand('copy');
     document.body.removeChild(textarea);
-    alert("Copied One");
-    CopyCount++;
-    counterCopy.innerText = CopyCount;
+    alert('Copied One');
+    copyCount++;
+    displayCopy.innerText = copyCount;
   });
 });
-
+// Call Btn  Section
 const callButtons = document.querySelectorAll('.call-btn');
-const historyContainer = document.getElementById('callHistory');
-const DisplayCoins = document.getElementById('coins');
+const historyDiv = document.getElementById('callHistory');
+const displayCoins = document.getElementById('coins');
+const clearBtn = document.getElementById('clearBtn');
 let coinCount = 100;
 callButtons.forEach(function (button) {
-  button.addEventListener("click", function () {
+  button.addEventListener('click', function () {
     if (coinCount < 20) {
       alert("Not enough coins to make a call!");
       return;
     }
     coinCount -= 20;
-    DisplayCoins.innerText = coinCount;
-    const card = button.closest(".card");
-    const nameEl = card.querySelector(".service-name");
-    const numberEl = card.querySelector(".service-number");
-    const serviceName = nameEl.textContent.trim();
-    const numberText = numberEl.textContent.trim();
-    alert("Calling " + serviceName + " (" + numberText + ")");
+    displayCoins.innerText = coinCount;
+    const card = button.closest('.card');
+    const name = card.querySelector('.service-name');
+    const number = card.querySelector('.service-number');
+    const serviceName = name.textContent.trim();
+    const serviceNumber = number.textContent.trim();
+    alert("Calling " + serviceName + " (" + serviceNumber + ")");
     // Time Section
     const now = new Date();
     const timeString = now.toLocaleTimeString();
     // Appending Section for Call History
     const historyItem = document.createElement("div");
-    historyItem.className = "flex justify-between items-center p-4 gap-4 border border-neutral-300 rounded-xl shadow-sm";
+    historyItem.className = " w-full flex justify-between items-center p-4 gap-4 border border-neutral-300 rounded-xl shadow-sm";
     historyItem.innerHTML = `
         <div>
           <h1>${serviceName}</h1>
-          <p>${numberText}</p>
+          <p>${serviceNumber}</p>
         </div>
         <div>
           <h1>${timeString}</h1>
         </div>
       `;
-    historyContainer.append(historyItem);
+    historyDiv.append(historyItem);
   });
+
 });
+clearBtn.addEventListener('click', function () {
+  historyDiv.innerHTML = "";
+
+})
