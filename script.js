@@ -3,7 +3,6 @@ const heartIcons = document.querySelectorAll('#heartIcons');
 const heartDisplay = document.getElementById('heart');
 let count = 0;
 for (const icon of heartIcons) {
-
   icon.addEventListener('click', () => {
     count++;
     heartDisplay.innerText = count;
@@ -11,12 +10,12 @@ for (const icon of heartIcons) {
 }
 // Copy Btn Section 
 const displayCopy = document.getElementById('displayCopy');
-const copyButtons = document.querySelectorAll('.copy-btn');
+const copyBtns = document.querySelectorAll('.copy-btn');
 let copyCount = 0;
 
-copyButtons.forEach(function (button) {
-  button.addEventListener('click', function () {
-    const card = button.closest('.card');
+for (const btn of copyBtns) {
+  btn.addEventListener('click', function () {
+    const card = btn.closest('.card');
 
     const serviceNmbr = card.querySelector('.service-number');
     const numberText = serviceNmbr.textContent.trim();
@@ -31,22 +30,24 @@ copyButtons.forEach(function (button) {
     copyCount++;
     displayCopy.innerText = copyCount;
   });
-});
+}
+
 // Call Btn  Section
 const callButtons = document.querySelectorAll('.call-btn');
 const historyDiv = document.getElementById('callHistory');
 const displayCoins = document.getElementById('coins');
 const clearBtn = document.getElementById('clearBtn');
 let coinCount = 100;
-callButtons.forEach(function (button) {
-  button.addEventListener('click', function () {
+
+for (const btn of callButtons) {
+  btn.addEventListener('click', function () {
     if (coinCount < 20) {
       alert("Not enough coins to make a call!");
       return;
     }
     coinCount -= 20;
     displayCoins.innerText = coinCount;
-    const card = button.closest('.card');
+    const card = btn.closest('.card');
     const name = card.querySelector('.service-name');
     const number = card.querySelector('.service-number');
     const serviceName = name.textContent.trim();
@@ -69,8 +70,8 @@ callButtons.forEach(function (button) {
       `;
     historyDiv.append(historyItem);
   });
-
-});
+}
+// clear btn section
 clearBtn.addEventListener('click', function () {
   historyDiv.innerHTML = "";
 
